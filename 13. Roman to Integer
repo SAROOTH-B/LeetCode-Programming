@@ -54,7 +54,6 @@ public:
             i++;
             }
             sum+=value;
-            cout<<sum<<" ";
         }
         return sum;
     }
