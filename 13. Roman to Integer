@@ -1,0 +1,61 @@
+class Solution {
+public:
+    int romanToInt(string s) {
+        int size = s.length();
+        int value=0,sum=0;
+        for(int i=0;i<size;i++)
+        {
+            switch(s[i])
+            {
+                case 'I':
+                value = 1;
+                break;
+                case 'V':
+                value = 5;
+                break;
+                case 'X':
+                value = 10;
+                break;
+                case 'L':
+                value = 50;
+                break;
+                case 'C':
+                value = 100;
+                break;
+                case 'D':
+                value = 500;
+                break;
+                case 'M':
+                value = 1000;
+                break;
+            }
+            if(s[i]=='I'&&s[i+1]=='V'){
+            value = 4;
+            i+=2;
+            }
+            if(s[i]=='I'&&s[i+1]=='X'){
+            value = 9;
+            i+=2;
+            }
+            if(s[i]=='X'&&s[i+1]=='L'){
+            value = 40;
+            i++;
+            }
+            if(s[i]=='X'&&s[i+1]=='C'){
+            value = 90;
+            i++;
+            }
+            if(s[i]=='C'&&s[i+1]=='D'){
+            value = 400;
+            i++;
+            }
+            if(s[i]=='C'&&s[i+1]=='M'){
+            value = 900;
+            i++;
+            }
+            sum+=value;
+            cout<<sum<<" ";
+        }
+        return sum;
+    }
+};
