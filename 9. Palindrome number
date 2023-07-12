@@ -1,0 +1,25 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        vector <int> a;
+        int i=0,k=0,j=0;
+        if(x<0) return false;
+        while(x!=0){
+        a.push_back(x%10);
+        x/=10;
+        k++;
+        }
+        int l=k;
+        k=k-1;
+        while(i<k)
+        {
+            if(a[i]==a[k]){j++;}
+            i++;
+            k--;
+        }
+        if(j==l/2)
+        return true;
+        else
+        return false;
+    }
+};
