@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int minStartValue(vector<int>& nums) {
+        int startvalue=1,ans=0,flag=0;
+        int dup;
+        for(int i=0;;i++){
+            dup = startvalue;
+            flag=0;ans=0;
+            cout<<startvalue<<" ";
+            for(int i=0;i<nums.size();i++){
+                ans = dup + nums[i];
+                dup = ans;
+                if(ans<1) {
+                    flag=1;
+                    break;}
+            }
+
+            if(flag)
+                startvalue++;
+            else
+            break;        
+        }
+        return startvalue;
+    }
+};
